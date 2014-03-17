@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="CPP-Debug|Win32">
+      <Configuration>CPP-Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release-Logging|Win32">
+      <Configuration>Release-Logging</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A3949EB7-6CB6-4B21-B9F3-B253E7AFB79D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MarkedUpTestAppsWin32ConsoleNativeCPP</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v90</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v100</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Logging|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v100</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='CPP-Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v100</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Logging|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='CPP-Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Logging|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='CPP-Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(ProjectDir)bin\MarkedUp.Win32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>echo PREBUILDSTEP for $(ProjectName)
+
+echo Copying files from $(SolutionDir)\sdk to $(ProjectDir)bin\$(Configuration)
+
+if not exist "$(ProjectDir)bin\$(Configuration)" mkdir "$(ProjectDir)bin\$(Configuration)"
+ 
+xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed 
+
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+
+goto BuildEventOK
+:BuildEventFailed
+echo PREBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo PREBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>echo POSTBUILDSTEP for $(ProjectName)
+
+echo Copying files from $(ProjectDir)bin\$(Configuration) to $(TargetDir)
+ 
+xcopy "$(ProjectDir)bin\$(Configuration)\MarkedUp.Win32.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\$(Configuration)\MarkedUpWrapperNET35.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\$(Configuration)\MarkedUp (NET35).dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\$(Configuration)\System.Threading.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ xcopy "$(ProjectDir)bin\$(Configuration)\MarkedUpWrapperNET40.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\$(Configuration)\MarkedUp (NET40).dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ 
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+
+goto BuildEventOK
+:BuildEventFailed
+echo POSTBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(ProjectDir)bin\MarkedUp.Win32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>echo PREBUILDSTEP for $(ProjectName)
+
+echo Copying files from $(SolutionDir)\sdk to $(ProjectDir)bin\$(Configuration)
+
+if not exist "$(ProjectDir)bin\$(Configuration)" mkdir "$(ProjectDir)bin\$(Configuration)"
+ 
+xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed 
+
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+
+goto BuildEventOK
+:BuildEventFailed
+echo PREBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo PREBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>echo POSTBUILDSTEP for $(ProjectName)
+
+echo Copying files from $(ProjectDir)bin to $(TargetDir)
+ 
+xcopy "$(ProjectDir)bin\MarkedUp.Win32.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\MarkedUpWrapperNET35.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\MarkedUp (NET35).dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\System.Threading.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ xcopy "$(ProjectDir)bin\MarkedUpWrapperNET40.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\MarkedUp (NET40).dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ 
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+
+goto BuildEventOK
+:BuildEventFailed
+echo POSTBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Logging|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(ProjectDir)bin\MarkedUp.Win32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>echo PREBUILDSTEP for $(ProjectName)
+
+echo Copying files from $(SolutionDir)\sdk to $(ProjectDir)bin\$(Configuration)
+
+if not exist "$(ProjectDir)bin\$(Configuration)" mkdir "$(ProjectDir)bin\$(Configuration)"
+ 
+xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed 
+
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+
+goto BuildEventOK
+:BuildEventFailed
+echo PREBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo PREBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>echo POSTBUILDSTEP for $(ProjectName)
+
+echo Copying files from $(ProjectDir)bin to $(TargetDir)
+ 
+xcopy "$(ProjectDir)bin\MarkedUp.Win32.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\MarkedUpWrapperNET35.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\MarkedUp (NET35).dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\System.Threading.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ xcopy "$(ProjectDir)bin\MarkedUpWrapperNET40.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\MarkedUp (NET40).dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ 
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+
+goto BuildEventOK
+:BuildEventFailed
+echo POSTBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='CPP-Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(ProjectDir)bin\MarkedUp.Win32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>echo PREBUILDSTEP for $(ProjectName)
+
+echo Copying files from $(SolutionDir)\sdk to $(ProjectDir)bin\$(Configuration)
+
+if not exist "$(ProjectDir)bin\$(Configuration)" mkdir "$(ProjectDir)bin\$(Configuration)"
+ 
+xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(SolutionDir)\sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+if errorlevel 1 goto BuildEventFailed 
+
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+
+goto BuildEventOK
+:BuildEventFailed
+echo PREBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo PREBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>echo POSTBUILDSTEP for $(ProjectName)
+
+echo Copying files from $(ProjectDir)bin to $(TargetDir)
+ 
+xcopy "$(ProjectDir)bin\MarkedUp.Win32.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\MarkedUpWrapperNET35.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\MarkedUp (NET35).dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\System.Threading.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ xcopy "$(ProjectDir)bin\MarkedUpWrapperNET40.dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(ProjectDir)bin\MarkedUp (NET40).dll" "$(TargetDir)" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ 
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+
+goto BuildEventOK
+:BuildEventFailed
+echo POSTBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\distributions\shared\consumer\MarkedUp.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MarkedUp.TestApps.Win32.Console (Native CPP).cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release-Logging|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='CPP-Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
