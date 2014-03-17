@@ -105,23 +105,23 @@
     <PreBuildEvent>
       <Command>echo PREBUILDSTEP for $(ProjectName)
 
-echo Copying files from $(SolutionDir)\sdk to $(ProjectDir)bin\$(Configuration)
+echo Copying files from $(SolutionDir)sdk to $(ProjectDir)bin\$(Configuration)
 
 if not exist "$(ProjectDir)bin\$(Configuration)" mkdir "$(ProjectDir)bin\$(Configuration)"
  
-xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed 
 
 REM Exit properly because the build will not fail 
@@ -186,23 +186,23 @@ echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
     <PreBuildEvent>
       <Command>echo PREBUILDSTEP for $(ProjectName)
 
-echo Copying files from $(SolutionDir)\sdk to $(ProjectDir)bin\$(Configuration)
+echo Copying files from $(SolutionDir)sdk to $(ProjectDir)bin\$(Configuration)
 
 if not exist "$(ProjectDir)bin\$(Configuration)" mkdir "$(ProjectDir)bin\$(Configuration)"
  
-xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed 
 
 REM Exit properly because the build will not fail 
@@ -267,23 +267,23 @@ echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
     <PreBuildEvent>
       <Command>echo PREBUILDSTEP for $(ProjectName)
 
-echo Copying files from $(SolutionDir)\sdk to $(ProjectDir)bin\$(Configuration)
+echo Copying files from $(SolutionDir)sdk to $(ProjectDir)bin\$(Configuration)
 
 if not exist "$(ProjectDir)bin\$(Configuration)" mkdir "$(ProjectDir)bin\$(Configuration)"
  
-xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed 
 
 REM Exit properly because the build will not fail 
@@ -347,23 +347,23 @@ echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</Command>
     <PreBuildEvent>
       <Command>echo PREBUILDSTEP for $(ProjectName)
 
-echo Copying files from $(SolutionDir)\sdk to $(ProjectDir)bin\$(Configuration)
+echo Copying files from $(SolutionDir)sdk to $(ProjectDir)bin\$(Configuration)
 
 if not exist "$(ProjectDir)bin\$(Configuration)" mkdir "$(ProjectDir)bin\$(Configuration)"
  
-xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp.Win32.lib" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp.Win32.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUpWrapperNET35.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp (NET35).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\System.Threading.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUpWrapperNET40.dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed
-xcopy "$(SolutionDir)\sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
+xcopy "$(SolutionDir)sdk\MarkedUp (NET40).dll" "$(ProjectDir)bin\$(Configuration)" /i /d /y
 if errorlevel 1 goto BuildEventFailed 
 
 REM Exit properly because the build will not fail 
